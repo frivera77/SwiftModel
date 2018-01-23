@@ -1,0 +1,38 @@
+page-workspace {
+     /// @prop - Font size of the active tab button text
+     $tabs-md-tab-font-size-active:                8rem !default;
+
+     /// @prop - Font weight of the tab button text
+     $tabs-md-tab-font-weight:                     bold !default;
+
+     /// @prop - Text color of the active tab button
+     $tabs-md-tab-text-color-active:              orange !default;
+
+     /// @prop - Transform for the active tab button text
+     $tabs-md-tab-text-transform-active:   scale3d($tabs-md-tab-font-size-active / $tabs-md-tab-font-size, $tabs-md-tab-font-size-active / $tabs-md-tab-font-size, 4) !default;
+
+
+     .tabs-md[tabsHighlight=true] .tab-highlight {
+          @include position(null, null, 0, 0);
+          @include transform-origin(0, 0);
+        
+          position: absolute;
+        
+          display: block;
+        
+          width: 1px;
+          height: 3px;
+        
+          //background: $tabs-md-tab-color-active;
+          background: orange;
+          transform: translateZ(0);
+        }
+        
+        .tabs-md[tabsHighlight=true] .tab-highlight.animate {
+          transition-duration: 300ms;
+        }
+        
+        .tabs-md[tabsHighlight=true][tabsPlacement=bottom] > .tabbar > .tab-highlight {
+          top: 0;
+        }
+}

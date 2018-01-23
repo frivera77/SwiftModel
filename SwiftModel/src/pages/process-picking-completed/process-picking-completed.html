@@ -1,0 +1,56 @@
+
+<ion-header>
+    <ion-navbar no-border-bottom color="success">
+      <ion-title>
+        Picking process 2/2
+      </ion-title>
+    </ion-navbar>
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="filter_tasks" color="primary">
+            <ion-segment-button value="pending">
+              Pending to work
+            </ion-segment-button>
+            <ion-segment-button value="completed">
+              Lincense detail
+            </ion-segment-button>
+          </ion-segment>
+    </ion-toolbar>
+</ion-header>
+<ion-content no-border-top> 
+    <ion-refresher (ionRefresh)="doRefresh($event)" clear outline>
+        <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+      </ion-refresher-content>
+    </ion-refresher>
+    <div [ngSwitch]="filter_tasks">
+        <ion-item item-end>
+          <button item-end ion-button (click)="PrintActions()">
+            <ion-icon name="more">Print options</ion-icon>
+          </button>
+        </ion-item>
+
+        <ion-list *ngSwitchCase="'pending'" (click)="ProcessSKU($event, item)">
+            <ion-item *ngFor="let item of items">
+              <ion-thumbnail item-start>
+                <img src="{{item.picture}}">
+              </ion-thumbnail>
+              <h3><b>{{item.skuid}}</b></h3>
+              <ion-note>{{item.description}}</ion-note>
+              <p></p>
+              <ion-badge color="{{item.color}}">
+                {{item.scanned}} / {{item.requested}}
+              </ion-badge>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'completed'">
+        </ion-list>  
+
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+    
+</ion-content>  

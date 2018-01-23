@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="success">
+      <ion-title>Process Picking 1/2</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>{{EndCustomer}}</ion-item>
+    <ion-item>
+      <ion-select [(ngModel)]="ToT" multiple="false" cancelText="Cancel" okText="OK">
+        <ion-option value="ToT01" selected="true">Acuerdo 1</ion-option>
+        <ion-option value="ToT02">Acuerdo 2</ion-option>
+        <ion-option value="ToT03">Acuerdo 3</ion-option>
+      </ion-select>                        
+    </ion-item>
+  </ion-list>  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block large color="primary" (click)="CreateLicense()">Create license</button>
+  </ion-toolbar>
+</ion-footer>

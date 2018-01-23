@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>Info Center</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list radio-group>
+        <ion-list-header>
+          What are you scanning?
+        </ion-list-header>
+        <ion-item>
+          <ion-label>SKU/Barcode</ion-label>
+          <ion-radio checked="true" value="sku"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>License</ion-label>
+          <ion-radio value="license"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Location</ion-label>
+          <ion-radio value="location"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>BIN</ion-label>
+            <ion-radio value="bin"></ion-radio>
+          </ion-item>
+        </ion-list>
+      <ion-searchbar animated="true" type="text" showCancelButton="true" ></ion-searchbar>
+      <ion-card>
+      </ion-card>
+</ion-content>

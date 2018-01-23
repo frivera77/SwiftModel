@@ -1,0 +1,19 @@
+page-tasks-inbox {
+     
+     .item-note{
+          font-size: 12px !important
+     } 
+     .card {
+          padding-top: 1px;
+          padding-bottom: 1px;
+          box-shadow: 0 2px 2px black; }
+          .card .item {
+            border-left: 0;
+            border-right: 0; }
+          .card .item:first-child {
+            border-top: 0; }
+          .card .item:last-child {
+            border-bottom: 0; }
+
+}
+  

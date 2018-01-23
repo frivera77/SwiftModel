@@ -1,0 +1,41 @@
+<!--
+  Generated template for the VerifyEnvironmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Ambiente de trabajo</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <button ion-item (click)="checkWireless()">
+      <ion-icon name="wifi"></ion-icon>
+      Wireless status
+      <ion-icon item-end name="{{BTWirelessIcon}}" color="{{BTWirelessIconColor}}"></ion-icon>
+      <p>{{BTWirelessName}}:[{{BTWirelessIP}}]</p>
+    </button>
+    <button ion-item (click)="checkBT()">
+      <ion-icon name="bluetooth"></ion-icon>
+      Bluetooth status
+      <ion-icon item-end name="{{BTIcon}}" color="{{BTIconColor}}"></ion-icon>
+    </button>
+    <button ion-item (click)="checkBattery()">
+        <ion-icon name="battery-full"></ion-icon>
+        Battery level
+        <ion-badge item-end>{{BatteryLevel}}%</ion-badge>
+      </button>
+    <button ion-item>
+        <ion-icon name="person"></ion-icon>
+        Last user logged {{LastLoggedUser}}
+    </button>
+  </ion-list>
+  <button ion-button large block color="primary" (click)="ShowStartSession()">
+    Iniciar sesion
+  </button>
+  <button ion-button large block color="danger" (click)="ExitApp()">
+    Salir de Swift
+  </button>
+  </ion-content>
